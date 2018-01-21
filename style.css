@@ -78,7 +78,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  filter: blur(0.5px);
+  filter: blur(0.3px);
   /* animation: 500ms blurry infinite; */
 }
 
