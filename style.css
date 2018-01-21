@@ -78,17 +78,18 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  animation: 500ms blurry infinite;
+  filter: blur(0.5px);
+  /* animation: 500ms blurry infinite; */
 }
 
-@keyframes blurry {
+/* @keyframes blurry {
   from {
     filter: blur(0.5px);
   }
   to {
     filter: blur(0.1px);
   }
-}
+} */
 
 .title {
   font-size: 9vmin;
