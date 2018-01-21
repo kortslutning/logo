@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: 'Road Rage';
+  src: url('./fonts/Road_Rage.woff') format('woff');
+}
+
+html {
+  font-size: 21px;
+  font-family: 'Road Rage', Arial;
+  height: 100%;
+  background: #19232b;
+}
+
+body {
+  height: 100%;
+  display: flex;
+}
+
+.scanlines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+
+  background-image: linear-gradient(
+    0deg,
+    #223 25%,
+    #450 25%,
+    #410 50%,
+    #230 50%,
+    #210 75%,
+    #200 75%,
+    #190
+  );
+  background-size: 6px 6px;
+  animation: 300ms moveUp infinite;
+}
+
+@keyframes moveUp {
+  0% {
+    background-position-y: 0;
+  }
+  30% {
+    background-position-y: -3px;
+  }
+  70% {
+    background-position-y: -5px;
+  }
+  100% {
+    background-position-y: 0;
+  }
+}
+
+.logo {
+  margin: auto;
+  background: url('circle.svg') no-repeat;
+  background-position: center top;
+  background-size: contain;
+
+  width: 50vmin;
+  height: 50vmin;
+  padding-bottom: 5vmin;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  animation: 500ms blurry infinite;
+}
+
+@keyframes blurry {
+  from {
+    filter: blur(0.5px);
+  }
+  to {
+    filter: blur(0.1px);
+  }
+}
+
+.title {
+  font-size: 9vmin;
+  position: relative;
+  line-height: 0.8;
+  color: #ce4286;
+  text-shadow: 0.5vmin 0.5vmin 0 #4d8bb3;
+
+  transform: rotateZ(-10deg);
+  margin-left: 4vmin;
+}
+.title::after {
+  content: '>';
+  position: absolute;
+  left: 50%;
+  bottom: -1vmin;
+  font-size: 8vmin;
+}
